@@ -6,7 +6,7 @@ sealed trait Stack[+A] {
     def push[B>:A](head: B): Stack[B] = Stack[B](head,this);
     def +: [B>:A](head: B): Stack[B] = push(head)
     def height: Int;
-    def isEmpty;
+    def isEmpty: Boolean;
 }
 
 class StackFrame[+A](val head: A, val tail: Stack[A]) extends Stack[A] {
