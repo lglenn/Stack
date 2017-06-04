@@ -4,7 +4,7 @@ sealed trait Stack[+A] {
     def pop: (A, Stack[A]);
     def peek: A;
     def push[B>:A](head: B): Stack[B] = Stack[B](head,this);
-    def ->[B>:A](head: B): Stack[B] = push(head)
+    def +: [B>:A](head: B): Stack[B] = push(head)
     def height: Int;
 }
 
