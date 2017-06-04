@@ -4,16 +4,15 @@ sealed trait Stack[+A] {
     def pop: (A, Stack[A]);
     def peek: A;
     def push[B>:A](head: B): Stack[B] = Stack[B](head,this);
+    def ->[B>:A](head: B): Stack[B] = push(head)
     def height: Int;
 }
 
 class StackFrame[+A](val head: A, val tail: Stack[A]) extends Stack[A] {
-
     def pop: (A, Stack[A]) = (head,tail);
     def peek: A = head;
     def height: Int = 1 + tail.height;
     override def toString: String = s"${tail} | ${head}"
-
 }
 
 object EmptyStack extends Stack[Nothing] {
