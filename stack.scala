@@ -23,7 +23,5 @@ object Base extends Stack[Nothing] {
 }
 
 object Stack {
-
     def apply[A](head: A, tail: Stack[A]) = new StackFrame[A](head, tail);
-
 }
