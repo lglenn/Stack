@@ -15,7 +15,7 @@ class StackFrame[+A](val head: A, val tail: Stack[A]) extends Stack[A] {
     override def toString: String = s"${head} | ${tail}"
 }
 
-object EmptyStack extends Stack[Nothing] {
+object Base extends Stack[Nothing] {
     def pop: (Nothing, Stack[Nothing]) = throw new Exception;
     def peek: Nothing = throw new Exception;
     def height: Int = 0;
