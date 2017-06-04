@@ -12,7 +12,7 @@ class StackFrame[+A](val head: A, val tail: Stack[A]) extends Stack[A] {
     def pop: (A, Stack[A]) = (head,tail);
     def peek: A = head;
     def height: Int = 1 + tail.height;
-    override def toString: String = s"${tail} | ${head}"
+    override def toString: String = s"${head} | ${tail}"
 }
 
 object EmptyStack extends Stack[Nothing] {
